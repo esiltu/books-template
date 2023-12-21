@@ -129,13 +129,13 @@ const SignIn = () => {
                                 }}
                                 value={values.email}
                                 style={{
-                                    backgroundColor: '#F5F5F5',
+                                    backgroundColor: '#FAFAFA',
                                     width: '83%',
                                     height: '13%',
                                     bottom: '4%',
                                     borderRadius: 10,
                                     paddingLeft: 10,
-                                    borderColor: (touched.email || isFormDirty) && errors.email ? 'red' : '#ccc',
+                                    borderColor: (touched.email || isFormDirty) && errors.email ? 'red' : '#54408C',
                                     borderWidth: 0.5,
                                 }}
                             />
@@ -155,13 +155,13 @@ const SignIn = () => {
                                 }}
                                 value={values.password}
                                 style={{
-                                    backgroundColor: '#F5F5F5',
+                                    backgroundColor: '#FAFAFA',
                                     width: '83%',
                                     height: '13%',
                                     bottom: '12%',
                                     borderRadius: 10,
                                     paddingLeft: 10,
-                                    borderColor: (touched.password || isFormDirty) && errors.password ? 'red' : '#ccc',
+                                    borderColor: (touched.password || isFormDirty) && errors.password ? 'red' : '#54408C',
                                     borderWidth: 0.5,
                                 }}
                             />
