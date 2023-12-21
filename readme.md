@@ -1,2 +1,5 @@
-## Preview of this application 😎📱
-![Screenshot](/assets/preview-app-kit.png)
+## Onboarding screenshots 😎📱
+![Screenshot](/assets/app-preview-images/preview-app-kit.png)
+
+## Authentication screenshots
+![Screenshot](/assets/app-preview-images/auth-screenshot.png)
