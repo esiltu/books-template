@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 import React from 'react'
 
 const SignUp = () => {
     return (
-        <View>
-            <Text>SignUp</Text>
-        </View>
+        <SafeAreaView>
+            <View>
+                <Text>Sign Up</Text>
+            </View>
+        </SafeAreaView>
     )
 }
 

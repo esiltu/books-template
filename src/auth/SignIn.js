@@ -1,14 +1,170 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
+import {
+    StyleSheet,
+    Text,
+    View,
+    SafeAreaView,
+    TouchableOpacity,
+    KeyboardAvoidingView,
+    TextInput,
+} from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import Toast from 'react-native-toast-message';
 
 const SignIn = () => {
+    const navigation = useNavigation();
+    const [isFormDirty, setIsFormDirty] = useState(false);
+
+    // Form validation schema using Yup
+    const validationSchema = Yup.object().shape({
+        email: Yup.string().email('Invalid email').required('Email is required'),
+        password: Yup.string().required('Password is required'),
+    });
+
+    // Function to handle form submission
+    const handleSubmit = (values, { resetForm }) => {
+        setIsFormDirty(false);
+        // Simulating API call or other asynchronous operation
+        setTimeout(() => {
+            // Check if the email is "test@test.com" and password is "password"
+            if (values.email === 'test@test.com' && values.password === 'password') {
+                // Display success toast on successful sign-in
+                Toast.show({
+                    type: 'success',
+                    text1: 'Sign In Successful',
+                    text2: 'Welcome back!',
+                });
+                // Navigate to the home screen or any other screen on success
+                console.log('Sign in successful!');
+                // Reset the form and remove error messages
+                resetForm();
+            } else {
+                // Display error toast on invalid credentials
+                Toast.show({
+                    type: 'error',
+                    text1: 'Sign In Failed',
+                    text2: 'Invalid email or password',
+                });
+            }
+        }, 1000); // Simulating delay for API call
+    };
+
+    // Func to navigate back to the onboarding page
+    function goBackToOnboarding() {
+        try {
+            navigation.goBack();
+            console.log('You wanna go back for sure?');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
-        <View>
-            <Text>SignIn</Text>
-        </View>
-    )
-}
+        <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+            {/* Header */}
+            <View>
+                <TouchableOpacity
+                    style={{ width: '10%', left: '5%', top: '100%' }}
+                    activeOpacity={0.6}
+                    onPress={goBackToOnboarding}
+                >
+                    <AntDesign name="arrowleft" size={35} style={{ left: '10%', top: '0%' }} />
+                </TouchableOpacity>
+            </View>
+            {/* Part of the Header welcome texts etc.. */}
+            <View style={{ top: '7.5%' }}>
+                <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 30, left: '7.5%' }}>Welcome back 👋</Text>
+                <Text style={{ color: '#A6A6A6', fontWeight: '500', fontSize: 17, left: '7.5%', top: '20%' }}>Sign in to your account</Text>
+            </View>
+            {/* Content for textinputs */}
+            <KeyboardAvoidingView style={{ top: '15%', left: '7.5%', justifyContent: 'space-between' }}>
+                {/* Use Formik to manage form state and validation */}
+                <Formik
+                    initialValues={{ email: '', password: '' }}
+                    onSubmit={handleSubmit}
+                    validationSchema={validationSchema}
+                >
+                    {({ handleChange, handleBlur, handleSubmit, values, errors, touched, setFieldTouched }) => (
+                        <>
+                            <Text style={{ fontSize: 17, fontWeight: '500' }}>Email</Text>
+                            <TextInput
+                                autoCapitalize="none"
+                                placeholderTextColor="#B8B8B8"
+                                placeholder="Your email"
+                                onChangeText={handleChange('email')}
+                                onBlur={() => {
+                                    handleBlur('email');
+                                    setFieldTouched('email');
+                                    setIsFormDirty(true);
+                                }}
+                                value={values.email}
+                                style={{
+                                    backgroundColor: '#F5F5F5',
+                                    width: '83%',
+                                    height: '14%',
+                                    bottom: '7%',
+                                    borderRadius: 10,
+                                    paddingLeft: 10,
+                                    borderColor: (touched.email || isFormDirty) && errors.email ? 'red' : '#ccc',
+                                    borderWidth: 0.5,
+                                }}
+                            />
 
-export default SignIn
 
-const styles = StyleSheet.create({})
+                            <Text style={{ fontSize: 17, fontWeight: '500', bottom: '15%' }}>Password</Text>
+                            <TextInput
+                                autoCapitalize="none"
+                                placeholderTextColor="#B8B8B8"
+                                placeholder="Your password"
+                                secureTextEntry
+                                onChangeText={handleChange('password')}
+                                onBlur={() => {
+                                    handleBlur('password');
+                                    setFieldTouched('password');
+                                    setIsFormDirty(true);
+                                }}
+                                value={values.password}
+                                style={{
+                                    backgroundColor: '#F5F5F5',
+                                    width: '83%',
+                                    height: '14%',
+                                    bottom: '23%',
+                                    borderRadius: 10,
+                                    paddingLeft: 10,
+                                    borderColor: (touched.password || isFormDirty) && errors.password ? 'red' : '#ccc',
+                                    borderWidth: 0.5,
+                                }}
+                            />
+
+                            {/* Responsive button to submit the form */}
+                            <TouchableOpacity
+                                style={[styles.submitButton, { backgroundColor: (values.email && values.password) ? '#54408C' : '#ccc' }]}
+                                onPress={handleSubmit}
+                                disabled={!values.email || !values.password}
+                            >
+                                <Text style={{ color: 'white', fontSize: 19, fontWeight: '600', textAlign: 'center', top: '20%', }}>Login</Text>
+                            </TouchableOpacity>
+                        </>
+                    )}
+                </Formik>
+            </KeyboardAvoidingView>
+        </SafeAreaView>
+    );
+};
+
+export default SignIn;
+
+const styles = StyleSheet.create({
+    submitButton: {
+        width: '85%',
+        alignSelf: 'center',
+        height: '13%',
+        borderRadius: 20,
+        marginTop: 20,
+        bottom: '30%',
+        right: '7.9%',
+    },
+});
