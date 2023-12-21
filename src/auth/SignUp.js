@@ -64,13 +64,14 @@ const SignUp = () => {
                 // Display success toast on successful sign-in
                 Toast.show({
                     type: 'success',
-                    text1: 'Sign In Successful',
-                    text2: 'Welcome back!',
+                    text1: 'Signed up successfully',
+                    text2: `Welcome here! ${values.name}`,
                 });
                 // Navigate to the home screen or any other screen on success
                 console.log('Sign in successful! ' + values.email, values.name, values.password);
                 // Reset the form and remove error messages
                 resetForm();
+                navigation.navigate("VerifyEmail", { name: values.name, email: values.email, password: values.password });
             } else {
                 // Display error toast on invalid credentials
                 Toast.show({
