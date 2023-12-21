@@ -43,10 +43,10 @@ const OnboardingScreen = () => {
         </View>
         <View>
           <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '80%', alignSelf: 'center', height: '20%', bottom: '6.5%', borderRadius: 15, }} activeOpacity={0.6}>
-            <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '700', top: '27.5%', }}>Continue</Text>
+            <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '600', top: '27.5%', }}>Continue</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '80%', alignSelf: 'center', height: '20%', bottom: '3.5%', borderRadius: 15, }} activeOpacity={0.6}>
-            <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '700', top: '25%', }}>Sign in</Text>
+            <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '600', top: '25%', }}>Sign in</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -67,10 +67,10 @@ const OnboardingScreen = () => {
         </View>
         <View>
           <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '80%', alignSelf: 'center', height: '20%', bottom: '6.5%', borderRadius: 15, }} activeOpacity={0.6}>
-            <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '700', top: '27.5%', }}>Continue</Text>
+            <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '600', top: '27.5%', }}>Get Started</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '80%', alignSelf: 'center', height: '20%', bottom: '3.5%', borderRadius: 15, }} activeOpacity={0.6}>
-            <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '700', top: '25%', }}>Sign in</Text>
+            <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '600', top: '25%', }}>Sign in</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -91,10 +91,10 @@ const OnboardingScreen = () => {
         </View>
         <View>
           <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '80%', alignSelf: 'center', height: '20%', top: '2%', borderRadius: 15, }} activeOpacity={0.6}>
-            <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '700', top: '27.5%', }}>Continue</Text>
+            <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '600', top: '27.5%', }}>Get Started</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '80%', alignSelf: 'center', height: '20%', top: '5%', borderRadius: 15, }} activeOpacity={0.6}>
-            <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '700', top: '25%', }}>Sign in</Text>
+            <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '600', top: '25%', }}>Sign in</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
