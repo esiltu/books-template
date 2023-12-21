@@ -35,6 +35,15 @@ const SignIn = () => {
         }
     }
 
+    // Navigate to sign up page
+    function goToSignUpPage() {
+        try {
+            navigation.navigate("SignUp")
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
     // Form validation schema using Yup
     const validationSchema = Yup.object().shape({
@@ -188,7 +197,7 @@ const SignIn = () => {
             </KeyboardAvoidingView>
             {/* Other methods for Sign In */}
             <View>
-                <TouchableOpacity style={{ backgroundColor: 'white', alignSelf: 'center' }} activeOpacity={0.6}>
+                <TouchableOpacity style={{ backgroundColor: 'white', alignSelf: 'center' }} activeOpacity={0.6} onPress={goToSignUpPage}>
                     <Text style={{ fontSize: 17, color: '#A6A6A6', fontWeight: '600' }}>Don't have an account? <Text style={{ color: '#54408C' }}>Sign Up</Text></Text>
                 </TouchableOpacity>
             </View>
