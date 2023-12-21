@@ -17,7 +17,7 @@ const OnboardingScreen = () => {
   return (
     <Swiper
       ref={swiperRef}
-      paginationStyle={{ bottom: '23.5%' }}
+      paginationStyle={{ bottom: '24%' }}
       style={styles.wrapper}
       showsButtons={false}
       loop={false}
@@ -30,7 +30,7 @@ const OnboardingScreen = () => {
       {/* Slide 1 */}
       <SafeAreaView style={styles.slide}>
         <View>
-          <TouchableOpacity style={{ left: '10%', top: '200%', width: '30%', }} onPress={goToLoginSkip}>
+          <TouchableOpacity style={{ left: '10%', top: '200%', width: '30%', }} onPress={goToLoginSkip} activeOpacity={0.6}>
             <Text style={{ fontSize: 18, fontWeight: '600', color: '#54408C' }}>Skip</Text>
           </TouchableOpacity>
         </View>
@@ -42,11 +42,11 @@ const OnboardingScreen = () => {
           <Text style={{ color: '#A6A6A6', fontSize: 16, textAlign: 'center', bottom: '60%', width: '90%', left: '5%', }}>Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.</Text>
         </View>
         <View>
-          <TouchableOpacity onPress={handleContinue}>
-            <Text>Continue</Text>
+          <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '80%', alignSelf: 'center', height: '20%', bottom: '6.5%', borderRadius: 15, }} activeOpacity={0.6}>
+            <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '700', top: '27.5%', }}>Continue</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text>Sign in</Text>
+          <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '80%', alignSelf: 'center', height: '20%', bottom: '3.5%', borderRadius: 15, }} activeOpacity={0.6}>
+            <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '700', top: '25%', }}>Sign in</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -54,23 +54,23 @@ const OnboardingScreen = () => {
       {/* Slide 2 */}
       <SafeAreaView style={styles.slide}>
         <View>
-          <TouchableOpacity style={{ left: '10%', top: '200%', width: '30%', }} onPress={goToLoginSkip}>
+          <TouchableOpacity style={{ left: '10%', top: '200%', width: '30%', }} onPress={goToLoginSkip} activeOpacity={0.6}>
             <Text style={{ fontSize: 18, fontWeight: '600', color: '#54408C' }}>Skip</Text>
           </TouchableOpacity>
         </View>
         <View>
-          <Image source={require('../../assets/onboarding/onboadingimagetwo.png')} style={{ width: '80%', height: '65%', alignSelf: 'center', top: '15%', }} />
+          <Image source={require('../../assets/onboarding/onboadingimagetwo.png')} style={{ width: '80%', height: '65%', alignSelf: 'center', top: '15%', }} activeOpacity={0.6} />
         </View>
         <View>
           <Text style={{ color: 'black', fontSize: 25, fontWeight: 'bold', width: '60%', textAlign: 'center', left: '20%', bottom: '80%', }}>Your Bookish Soulmate Awaits</Text>
           <Text style={{ color: '#A6A6A6', fontSize: 16, textAlign: 'center', bottom: '60%', width: '90%', left: '5%', }}>Let us be your guide to the perfect read. Discover books tailored to your tastes for a truly rewarding experience.</Text>
         </View>
         <View>
-          <TouchableOpacity onPress={handleContinue}>
-            <Text>Continue</Text>
+          <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '80%', alignSelf: 'center', height: '20%', bottom: '6.5%', borderRadius: 15, }} activeOpacity={0.6}>
+            <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '700', top: '27.5%', }}>Continue</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text>Sign in</Text>
+          <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '80%', alignSelf: 'center', height: '20%', bottom: '3.5%', borderRadius: 15, }} activeOpacity={0.6}>
+            <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '700', top: '25%', }}>Sign in</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -78,7 +78,7 @@ const OnboardingScreen = () => {
       {/* Slide 3 */}
       <SafeAreaView style={styles.slide}>
         <View>
-          <TouchableOpacity style={{ left: '10%', top: '200%', width: '30%', }} onPress={goToLoginSkip}>
+          <TouchableOpacity style={{ left: '10%', top: '200%', width: '30%', }} onPress={goToLoginSkip} activeOpacity={0.6}>
             <Text style={{ fontSize: 18, fontWeight: '600', color: '#54408C' }}>Skip</Text>
           </TouchableOpacity>
         </View>
@@ -90,11 +90,11 @@ const OnboardingScreen = () => {
           <Text style={{ color: '#A6A6A6', fontSize: 17, textAlign: 'center', bottom: '60%', width: '65%', left: '20%', }}>Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let's go!</Text>
         </View>
         <View>
-          <TouchableOpacity onPress={handleContinue}>
-            <Text>Continue</Text>
+          <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '80%', alignSelf: 'center', height: '20%', top: '2%', borderRadius: 15, }} activeOpacity={0.6}>
+            <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '700', top: '27.5%', }}>Continue</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text>Sign in</Text>
+          <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '80%', alignSelf: 'center', height: '20%', top: '5%', borderRadius: 15, }} activeOpacity={0.6}>
+            <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '700', top: '25%', }}>Sign in</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -111,8 +111,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   customDot: {
-    height: '200%', // Set the desired height for the dots
-    width: '3%', // Set the desired width for the dots
+    height: '150%', // Set the desired height for the dots
+    width: '2.5%', // Set the desired width for the dots
     borderRadius: 15, // Set border radius for rounded dots
     marginHorizontal: 8, // Set the horizontal margin between dots
   },
