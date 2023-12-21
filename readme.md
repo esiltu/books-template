@@ -1,4 +1,4 @@
-## Onboarding screenshots 😎📱
+## Onboarding screenshots
 ![Screenshot](/assets/app-preview-images/preview-app-kit.png)
 
 ## Authentication screenshots
