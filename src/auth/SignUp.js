@@ -130,7 +130,7 @@ const SignUp = () => {
                                     borderRadius: 10,
                                     paddingLeft: 10,
                                     borderColor: (touched.name || isFormDirty) && errors.name ? 'red' : '#54408C',
-                                    borderWidth: 0.5,
+                                    // borderWidth: 0.5,
                                 }}
                             />
 
@@ -154,7 +154,7 @@ const SignUp = () => {
                                     borderRadius: 10,
                                     paddingLeft: 10,
                                     borderColor: (touched.email || isFormDirty) && errors.email ? 'red' : '#54408C',
-                                    borderWidth: 0.5,
+                                    // borderWidth: 0.5,
                                 }}
                             />
 
@@ -180,7 +180,7 @@ const SignUp = () => {
                                     borderRadius: 10,
                                     paddingLeft: 10,
                                     borderColor: (touched.password || isFormDirty) && errors.password ? 'red' : '#54408C',
-                                    borderWidth: 0.5,
+                                    // borderWidth: 0.5,
                                 }}
                             />
 
