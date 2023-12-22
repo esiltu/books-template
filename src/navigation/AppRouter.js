@@ -11,15 +11,15 @@ export default function AppRouter() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{ headerShown: false }} />
-                {/* Auth Group, Services */}
+                {/* Auth Group, Services, Verify your account pages... */}
                 <Stack.Group>
-                    <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false, gestureEnabled: false, }} />
-                    <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false, gestureEnabled: false, }} />
-                    <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: false, gestureEnabled: false, }} />
-                    <Stack.Screen name="VerifyEmail" component={VerifyEmail} options={{ headerShown: false, gestureEnabled: false, }} />
-                    <Stack.Screen name="VerifyPhone" component={VerifyPhone} options={{ headerShown: false, gestureEnabled: false, }} />
+                    <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false, gestureEnabled: true, }} />
+                    <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false, gestureEnabled: true, }} />
+                    <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: false, gestureEnabled: true, }} />
+                    <Stack.Screen name="VerifyEmail" component={VerifyEmail} options={{ headerShown: false, gestureEnabled: true, }} />
+                    <Stack.Screen name="VerifyPhone" component={VerifyPhone} options={{ headerShown: false, gestureEnabled: true, }} />
                     <Stack.Screen name="SuccesVerification" component={SuccesVerification} options={{ headerShown: false, gestureEnabled: false, }} />
-                    <Stack.Screen name="VerifyPhoneVerification" component={VerifyPhoneVerification} options={{ headerShown: false, gestureEnabled: false, }} />
+                    <Stack.Screen name="VerifyPhoneVerification" component={VerifyPhoneVerification} options={{ headerShown: false, gestureEnabled: true, }} />
                 </Stack.Group>
             </Stack.Navigator>
             <Toast />

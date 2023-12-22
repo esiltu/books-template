@@ -19,10 +19,18 @@ const OnboardingScreen = () => {
 
   const swiperRef = useRef(null);
 
+  // ...
+
   function handleContinue() {
-    // Move to the next slide
-    swiperRef.current.scrollBy(1, true);
+    // Add a delay of 1000 milliseconds (1 second)
+    setTimeout(() => {
+      // Move to the next slide
+      swiperRef.current.scrollBy(1, true);
+    }, 500);
   }
+
+  // ...
+
 
   return (
     <Swiper
@@ -52,10 +60,10 @@ const OnboardingScreen = () => {
           <Text style={{ color: '#A6A6A6', fontSize: 16, textAlign: 'center', bottom: '60%', width: '90%', left: '5%', }}>Discover new worlds, join a vibrant reading community. Start your reading adventure effortlessly with us.</Text>
         </View>
         <View>
-          <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '80%', alignSelf: 'center', height: '20%', bottom: '6.5%', borderRadius: 15, }} activeOpacity={0.6}>
+          <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '85%', alignSelf: 'center', height: '20%', bottom: '6.5%', borderRadius: 15, }} activeOpacity={0.6}>
             <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '600', top: '27.5%', }}>Continue</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '80%', alignSelf: 'center', height: '20%', bottom: '3.5%', borderRadius: 15, }} activeOpacity={0.6} onPress={goToLoginSkip}>
+          <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '85%', alignSelf: 'center', height: '20%', bottom: '3.5%', borderRadius: 15, }} activeOpacity={0.6} onPress={goToLoginSkip}>
             <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '600', top: '25%', }}>Sign in</Text>
           </TouchableOpacity>
         </View>
@@ -76,10 +84,10 @@ const OnboardingScreen = () => {
           <Text style={{ color: '#A6A6A6', fontSize: 16, textAlign: 'center', bottom: '60%', width: '90%', left: '5%', }}>Let us be your guide to the perfect read. Discover books tailored to your tastes for a truly rewarding experience.</Text>
         </View>
         <View>
-          <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '80%', alignSelf: 'center', height: '20%', bottom: '6.5%', borderRadius: 15, }} activeOpacity={0.6}>
+          <TouchableOpacity onPress={handleContinue} style={{ backgroundColor: '#54408C', width: '85%', alignSelf: 'center', height: '20%', bottom: '6.5%', borderRadius: 15, }} activeOpacity={0.6}>
             <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '600', top: '27.5%', }}>Get Started</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '80%', alignSelf: 'center', height: '20%', bottom: '3.5%', borderRadius: 15, }} activeOpacity={0.6} onPress={goToLoginSkip}>
+          <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '85%', alignSelf: 'center', height: '20%', bottom: '3.5%', borderRadius: 15, }} activeOpacity={0.6} onPress={goToLoginSkip}>
             <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '600', top: '25%', }}>Sign in</Text>
           </TouchableOpacity>
         </View>
@@ -100,10 +108,10 @@ const OnboardingScreen = () => {
           <Text style={{ color: '#A6A6A6', fontSize: 17, textAlign: 'center', bottom: '60%', width: '65%', left: '20%', }}>Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let's go!</Text>
         </View>
         <View>
-          <TouchableOpacity onPress={getStartedSignUp} style={{ backgroundColor: '#54408C', width: '80%', alignSelf: 'center', height: '20%', top: '2%', borderRadius: 15, }} activeOpacity={0.6}>
+          <TouchableOpacity onPress={getStartedSignUp} style={{ backgroundColor: '#54408C', width: '85%', alignSelf: 'center', height: '20%', top: '2%', borderRadius: 15, }} activeOpacity={0.6}>
             <Text style={{ textAlign: 'center', color: 'white', fontSize: 20, fontWeight: '600', top: '27.5%', }}>Get Started</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '80%', alignSelf: 'center', height: '20%', top: '5%', borderRadius: 15, }} activeOpacity={0.6} onPress={goToLoginSkip}>
+          <TouchableOpacity style={{ backgroundColor: '#E5DEF8', width: '85%', alignSelf: 'center', height: '20%', top: '5%', borderRadius: 15, }} activeOpacity={0.6} onPress={goToLoginSkip}>
             <Text style={{ textAlign: 'center', color: '#54408C', fontSize: 20, fontWeight: '600', top: '25%', }}>Sign in</Text>
           </TouchableOpacity>
         </View>

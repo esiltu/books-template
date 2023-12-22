@@ -66,6 +66,8 @@ const SignIn = () => {
                 });
                 // Navigate to the home screen or any other screen on success
                 console.log('Sign in successful!');
+                // Navigate to the bottom tab pages... soon here 
+
                 // Reset the form and remove error messages
                 resetForm();
             } else {
