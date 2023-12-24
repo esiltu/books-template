@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
 const ForgotPasswordEmail = () => {
-    return (
-        <View>
-            <Text>ForgotPasswordEmail</Text>
-        </View>
-    )
-}
+  return (
+    <View>
+      <Text>ForgotPasswordEmail</Text>
+    </View>
+  );
+};
 
-export default ForgotPasswordEmail
+export default ForgotPasswordEmail;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
