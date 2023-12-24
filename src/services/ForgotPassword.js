@@ -21,12 +21,12 @@ const ForgotPassword = () => {
         // Log email pressed
         console.log("Email pressed");
         // Navigate to dummy page for email
-        await navigation.navigate("DummyEmailPage");
+        await navigation.navigate("ForgotPasswordEmail");
       } else if (selectedSegmentIndex === 1) {
         // Log phone pressed
         console.log("Phone pressed");
         // Navigate to dummy page for phone
-        await navigation.navigate("DummyPhonePage");
+        await navigation.navigate("ForgotPasswordPhone");
       }
     } catch (error) {
       console.error("Error navigating:", error.message);

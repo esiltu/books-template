@@ -9,6 +9,11 @@ import {
   VerifyPhone,
   VerifyPhoneVerification,
   SuccesVerification,
+  SuccesSuccessForgotPage,
+  ForgotPasswordPhoneVerify,
+  ForgotPasswordPhone,
+  ForgotPasswordEmail,
+  ForgotPasswordEmailVerify,
 } from "../routers/AppMainRouter";
 import React, { useRef } from "react";
 import Toast from "react-native-toast-message";
@@ -59,6 +64,31 @@ export default function AppRouter() {
           <Stack.Screen
             name="VerifyPhoneVerification"
             component={VerifyPhoneVerification}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="SuccesSuccessForgotPage"
+            component={SuccesSuccessForgotPage}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="ForgotPasswordPhoneVerify"
+            component={ForgotPasswordPhoneVerify}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="ForgotPasswordPhone"
+            component={ForgotPasswordPhone}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="ForgotPasswordEmail"
+            component={ForgotPasswordEmail}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="ForgotPasswordEmailVerify"
+            component={ForgotPasswordEmailVerify}
             options={{ headerShown: false, gestureEnabled: true }}
           />
         </Stack.Group>
