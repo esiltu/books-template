@@ -42,4 +42,5 @@ Feel free to contribute and enhance the Books Bazar template! 🚀
 
 ## Preview Of Template
 
-![Screenshot](/app-cover.png)
+![Screenshot](/assets/app-preview-images/preview-app-kit.png)
+![Screenshot](/assets/app-preview-images/verification-screenshots.png)
