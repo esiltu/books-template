@@ -12,7 +12,7 @@ Welcome to the Books Bazar template, now freely available for everyone! 📚✨ 
 ✅ Sign-up and Sign-in pages  
 ✅ Phone and email verification  
 ✅ Success verification page  
-✅ Services pages, including forgot password and create new password  
+✅ Services pages, including forgot password and create new password
 
 ### Upcoming Features
 
@@ -41,5 +41,6 @@ Feel free to contribute and enhance the Books Bazar template! 🚀
 
 ## Preview Of Template
 
-![Screenshot](/assets/app-preview-images/preview-app-kit.png)
-![Screenshot](/assets/app-preview-images/verification-screenshots.png)
+![Screenshot](/assets/app-preview-images/onboarding-preview-kit.png)
+![Screenshot](/assets/app-preview-images/auth-preview-kit.png)
+![Screenshot](/assets/app-preview-images/verify-preview-kit.png)
