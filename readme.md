@@ -13,7 +13,6 @@ Welcome to the Books Bazar template, now freely available for everyone! 📚✨ 
 ✅ Phone and email verification  
 ✅ Success verification page  
 ✅ Services pages, including forgot password and create new password  
-✅ Success page
 
 ### Upcoming Features
 
