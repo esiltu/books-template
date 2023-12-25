@@ -39,3 +39,7 @@ Stay tuned for more updates! 🌟
 4. Run the app using `npm start` or `yarn start`.
 
 Feel free to contribute and enhance the Books Bazar template! 🚀
+
+### Preview Of Template
+
+![Screenshot](/preview-app.png)
