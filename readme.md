@@ -40,6 +40,6 @@ Stay tuned for more updates! 🌟
 
 Feel free to contribute and enhance the Books Bazar template! 🚀
 
-### Preview Of Template
+## Preview Of Template
 
 ![Screenshot](/preview-app.png)
