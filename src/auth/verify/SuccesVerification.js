@@ -16,6 +16,7 @@ const SuccesVerification = () => {
   function getStartedPages() {
     try {
       console.log("Wait a sec please!");
+      navigation.navigate("SignIn");
     } catch (error) {
       console.log(error);
     }
