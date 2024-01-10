@@ -13,6 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Toast from "react-native-toast-message";
+import { auth, firestore } from "../../firebase";
 
 const SignUp = () => {
   const navigation = useNavigation();
