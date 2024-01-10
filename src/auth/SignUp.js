@@ -13,7 +13,8 @@ import { useNavigation } from "@react-navigation/native";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Toast from "react-native-toast-message";
-import { auth, firestore } from "../../firebase";
+import { auth, firebase } from "../../firebase";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SignUp = () => {
   const navigation = useNavigation();
@@ -63,44 +64,48 @@ const SignUp = () => {
   });
 
   // Function to handle form submission
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = async (values, { resetForm }) => {
     setIsFormDirty(false);
-    // Simulating API call or other asynchronous operation
-    setTimeout(() => {
-      // Check if the email is "test@test.com" and password is "password"
-      if (
-        values.name === "test" &&
-        values.email === "test@test.com" &&
-        values.password === "password"
-      ) {
-        // Display success toast on successful sign-in
-        Toast.show({
-          type: "success",
-          text1: "Signed up successfully",
-          text2: `Welcome here! ${values.name}`,
-        });
-        // Navigate to the home screen or any other screen on success
-        console.log(
-          "Sign in successful! " + values.email,
-          values.name,
-          values.password
-        );
-        // Reset the form and remove error messages
-        resetForm();
-        navigation.navigate("VerifyEmail", {
-          name: values.name,
-          email: values.email,
-          password: values.password,
-        });
-      } else {
-        // Display error toast on invalid credentials
-        Toast.show({
-          type: "error",
-          text1: "Sign In Failed",
-          text2: "Invalid email or password",
-        });
+
+    try {
+      // Check if there is a stored username in AsyncStorage
+      const storedUsername = await AsyncStorage.getItem("username");
+
+      if (storedUsername) {
+        // If a username exists, delete it before setting the new one
+        await AsyncStorage.removeItem("username");
       }
-    }, 1000); // Simulating delay for API call
+
+      // Set the new username in AsyncStorage
+      await AsyncStorage.setItem("username", values.name);
+
+      // Create the user with email and password
+      const userCredential = await auth.createUserWithEmailAndPassword(
+        values.email,
+        values.password
+      );
+
+      // Access the user from the userCredential
+      const user = userCredential.user;
+
+      // Display success toast on successful sign-up
+      Toast.show({
+        type: "success",
+        text1: "Signed up successfully",
+        text2: `Welcome here, ${values.name}!`,
+      });
+
+      // Navigate to "Somewhere" or any other screen on success
+      navigation.navigate("Somewhere");
+    } catch (error) {
+      // Display error toast on sign-up failure
+      Toast.show({
+        type: "error",
+        text1: "Sign Up Failed",
+        text2: error.message,
+      });
+      console.log(error.message);
+    }
   };
 
   return (

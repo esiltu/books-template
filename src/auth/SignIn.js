@@ -14,6 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Toast from "react-native-toast-message";
+import { auth } from "../../firebase";
 
 const SignIn = () => {
   const navigation = useNavigation();
@@ -54,31 +55,20 @@ const SignIn = () => {
   const handleSubmit = (values, { resetForm }) => {
     setIsFormDirty(false);
     // Simulating API call or other asynchronous operation
-    setTimeout(() => {
-      // Check if the email is "test@test.com" and password is "password"
-      if (values.email === "test@test.com" && values.password === "password") {
-        // Display success toast on successful sign-in
-        Toast.show({
-          type: "success",
-          text1: "Sign In Successful",
-          text2: "Welcome back!",
-        });
-        // Navigate to the home screen or any other screen on success
-        console.log("Sign in successful!");
-        navigation.navigate("Sdsfd");
-        // Navigate to the bottom tab pages... soon here
-
-        // Reset the form and remove error messages
-        resetForm();
-      } else {
-        // Display error toast on invalid credentials
-        Toast.show({
-          type: "error",
-          text1: "Sign In Failed",
-          text2: "Invalid email or password",
-        });
-      }
-    }, 1000); // Simulating delay for API call
+    try {
+      const userCredential = auth.signInWithEmailAndPassword(
+        values.email,
+        values.password
+      );
+      console.log("Successfully logged in as:" + values.email);
+      Toast.show({
+        type: "success",
+        text1: `Welcome ${values.email}`,
+        text1Style: { textAlign: "left" },
+      });
+    } catch (error) {
+      console.log(error + "ddsffd");
+    }
   };
 
   // Func to navigate back to the onboarding page
