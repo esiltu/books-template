@@ -81,6 +81,15 @@ const SignIn = () => {
     }
   }
 
+  // Firebase Google Sign In
+  function googleSignInButton() {
+    try {
+      console.log("Google Sign In Coming Soon!");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
       {/* Header */}
@@ -287,7 +296,7 @@ const SignIn = () => {
       <View>
         <TouchableOpacity
           style={{ backgroundColor: "white", height: "30%", bottom: "18%" }}
-          onPress={() => console.log("pressed on google")}
+          onPress={googleSignInButton}
         >
           <Image
             source={require("../../assets/styling/logininwithgoogle.png")}

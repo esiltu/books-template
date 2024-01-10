@@ -14,7 +14,6 @@ Welcome to the Books Bazar template, now freely available for everyone! 📚✨ 
 ✅ Success verification page  
 ✅ Services pages, including forgot password and create new password
 
-
 ### Upcoming Features
 
 🚀 Bottom tab navigation with 4 different pages:
