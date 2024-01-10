@@ -66,6 +66,8 @@ const SignIn = () => {
         text1: `Welcome ${values.email}`,
         text1Style: { textAlign: "left" },
       });
+      // Navigate to the "Home" screen within the AuthRouter after successful login
+      navigation.navigate("AuthRouter", { screen: "Home" });
     } catch (error) {
       console.log(error + "ddsffd");
     }

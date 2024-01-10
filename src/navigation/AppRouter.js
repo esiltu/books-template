@@ -15,12 +15,34 @@ import {
   ForgotPasswordEmail,
   ForgotPasswordEmailVerify,
 } from "../routers/AppMainRouter";
+// Import Auth screens
+import { Home, Cart, Category, Profile } from "../routers/BottomTabRouter";
 import React, { useRef } from "react";
 import Toast from "react-native-toast-message";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 
 export default function AppRouter() {
+  const navigation = useNavigation();
+
+  // Check if a username is stored in AsyncStorage
+  useEffect(() => {
+    async function checkUsername() {
+      try {
+        const storedUsername = await AsyncStorage.getItem("username");
+        if (storedUsername) {
+          // Username found, navigate to Home screen
+          navigation.navigate("Home");
+        }
+      } catch (error) {
+        console.error("Error checking username:", error);
+      }
+    }
+
+    checkUsername();
+  }, []); // Empty dependency array ensures this runs only once on component mount
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -90,6 +112,29 @@ export default function AppRouter() {
             name="ForgotPasswordEmailVerify"
             component={ForgotPasswordEmailVerify}
             options={{ headerShown: false, gestureEnabled: true }}
+          />
+        </Stack.Group>
+        {/* Tab pages */}
+        <Stack.Group>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: true, headerTitle: "Home" }}
+          />
+          <Stack.Screen
+            name="Category"
+            component={Category}
+            options={{ headerShown: true, headerTitle: "Home" }}
+          />
+          <Stack.Screen
+            name="Cart"
+            component={Cart}
+            options={{ headerShown: true, headerTitle: "Home" }}
+          />
+          <Stack.Screen
+            name="Profile"
+            component={Profile}
+            options={{ headerShown: true, headerTitle: "Home" }}
           />
         </Stack.Group>
       </Stack.Navigator>
