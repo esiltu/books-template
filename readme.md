@@ -13,6 +13,7 @@ Welcome to the Books Bazar template, now freely available for everyone! 📚✨ 
 ✅ Phone and email verification  
 ✅ Success verification page  
 ✅ Services pages, including forgot password and create new password
+✅ Firebase Auth with Email and Password Sign In and Out
 
 ### Upcoming Features
 
@@ -26,7 +27,7 @@ Welcome to the Books Bazar template, now freely available for everyone! 📚✨ 
 🛒 Checkout page
 
 - [ ] Additional feature 1 Stripe?
-- [ ] Additional feature 2 Firebase Authentication?? 😎
+- [ ] Additional feature Apple and Google Auth with Firebase
 
 Stay tuned for more updates! 🌟
 
