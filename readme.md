@@ -9,11 +9,11 @@ Welcome to the Books Bazar template, now freely available for everyone! 📚✨ 
 ✅ App icon  
 ✅ Splash screen  
 ✅ Onboarding features  
-✅ Sign-up and Sign-in pages  
+✅ Sign-up and Sign-in pages with Auth & Firebase V10
 ✅ Phone and email verification  
 ✅ Success verification page  
 ✅ Services pages, including forgot password and create new password
-✅ Firebase Auth with Email and Password Sign In and Out
+
 
 ### Upcoming Features
 
