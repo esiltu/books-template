@@ -73,15 +73,15 @@ const SignIn = () => {
     }
   };
 
-  // Func to navigate back to the onboarding page
-  function goBackToOnboarding() {
-    try {
-      navigation.goBack();
-      console.log("You wanna go back for sure?");
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // // Func to navigate back to the onboarding page
+  // function goBackToOnboarding() {
+  //   try {
+  //     navigation.goBack();
+  //     console.log("You wanna go back for sure?");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   // Firebase Google Sign In
   function googleSignInButton() {
@@ -95,7 +95,7 @@ const SignIn = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
       {/* Header */}
-      <View>
+      {/* <View>
         <TouchableOpacity
           style={{ width: "10%", left: "5%", top: "100%" }}
           activeOpacity={0.6}
@@ -107,7 +107,7 @@ const SignIn = () => {
             style={{ left: "10%", top: "0%" }}
           />
         </TouchableOpacity>
-      </View>
+      </View> */}
       {/* Part of the Header welcome texts etc.. */}
       <View style={{ top: "7.5%" }}>
         <Text

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
@@ -17,40 +18,35 @@ import {
 } from "../routers/AppMainRouter";
 // Import Auth screens
 import { Home, Cart, Category, Profile } from "../routers/BottomTabRouter";
-import React, { useRef } from "react";
 import Toast from "react-native-toast-message";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useNavigation } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 
 export default function AppRouter() {
-  const navigation = useNavigation();
+  // Onboarding first launch check
+  const [isFirstLaunch, setIsFirstLaunch] = useState(false);
 
-  // Check if a username is stored in AsyncStorage
   useEffect(() => {
-    async function checkUsername() {
-      try {
-        const storedUsername = await AsyncStorage.getItem("username");
-        if (storedUsername) {
-          // Username found, navigate to Home screen
-          navigation.navigate("Home");
-        }
-      } catch (error) {
-        console.error("Error checking username:", error);
+    AsyncStorage.getItem("alreadyLaunched").then((value) => {
+      if (value === null) {
+        AsyncStorage.setItem("alreadyLaunched", "true");
+        setIsFirstLaunch(true);
+      } else {
+        setIsFirstLaunch(false);
       }
-    }
-
-    checkUsername();
-  }, []); // Empty dependency array ensures this runs only once on component mount
+    });
+  });
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Onboarding"
-          component={OnboardingScreen}
-          options={{ headerShown: false }}
-        />
+        {isFirstLaunch ?? (
+          <Stack.Screen
+            name="Onboarding"
+            component={OnboardingScreen}
+            options={{ headerShown: false }}
+          />
+        )}
         {/* Auth Group, Services, Verify your account pages... */}
         <Stack.Group>
           <Stack.Screen
