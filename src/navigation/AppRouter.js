@@ -20,6 +20,7 @@ import {
 import { Home, Cart, Category, Profile } from "../routers/BottomTabRouter";
 import Toast from "react-native-toast-message";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import TabRouter from "./TabRouter";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,31 +39,39 @@ export default function AppRouter() {
         setIsFirstLaunch(false);
       }
     });
-  });
+  }, []); // Add an empty dependency array to useEffect
 
   // Check for the LoggedIn
   useEffect(() => {
     AsyncStorage.getItem("isLoggedIn").then((value) => {
       if (value === null) {
-        setIsLoggedIn(true);
+        // Assuming you want to set it to "true" if it's null
+        AsyncStorage.setItem("isLoggedIn", "true");
       } else {
-        setIsLoggedIn(false);
+        setIsLoggedIn(true); // Update to true if the value is present
       }
     });
-  });
+  }, []); // Add an empty dependency array to useEffect
 
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {isFirstLaunch ?? (
+        {isFirstLaunch && !isLoggedIn ? (
           <Stack.Screen
             name="Onboarding"
             component={OnboardingScreen}
             options={{ headerShown: false }}
           />
-        )}
-        {/* Auth Group, Services, Verify your account pages... */}
-        {isLoggedIn ?? (
+        ) : null}
+        {isLoggedIn ? (
+          <Stack.Group>
+            <Stack.Screen
+              name="TabRouter"
+              component={TabRouter}
+              options={{ headerShown: true }}
+            />
+          </Stack.Group>
+        ) : (
           <Stack.Group>
             <Stack.Screen
               name="SignIn"
@@ -126,33 +135,6 @@ export default function AppRouter() {
             />
           </Stack.Group>
         )}
-        {/* Tab pages */}
-        <Stack.Group>
-          <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{
-              headerShown: true,
-              headerTitle: "Home",
-              gestureEnabled: false,
-            }}
-          />
-          <Stack.Screen
-            name="Category"
-            component={Category}
-            options={{ headerShown: true, headerTitle: "Home" }}
-          />
-          <Stack.Screen
-            name="Cart"
-            component={Cart}
-            options={{ headerShown: true, headerTitle: "Home" }}
-          />
-          <Stack.Screen
-            name="Profile"
-            component={Profile}
-            options={{ headerShown: true, headerTitle: "Home" }}
-          />
-        </Stack.Group>
       </Stack.Navigator>
       <Toast />
     </NavigationContainer>

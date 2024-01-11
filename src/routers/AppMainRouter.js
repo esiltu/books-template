@@ -11,3 +11,4 @@ export { default as ForgotPasswordPhoneVerify } from "../services/phone/ForgotPa
 export { default as ForgotPasswordPhone } from "../services/phone/ForgotPasswordPhone";
 export { default as ForgotPasswordEmail } from "../services/email/ForgotPasswordEmail";
 export { default as ForgotPasswordEmailVerify } from "../services/email/ForgotPasswordEmailVerify";
+export { default as TabRouter } from "../navigation/TabRouter";

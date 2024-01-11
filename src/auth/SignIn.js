@@ -53,16 +53,16 @@ const SignIn = () => {
   });
 
   // Function to handle form submission
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = async (values, { resetForm }) => {
     setIsFormDirty(false);
     // Simulating API call or other asynchronous operation
     try {
-      const userCredential = auth.signInWithEmailAndPassword(
+      const userCredential = await auth.signInWithEmailAndPassword(
         values.email,
         values.password
       );
       console.log("Successfully logged in as:" + values.email);
-      AsyncStorage.setItem("isLoggedIn", "true");
+      await AsyncStorage.setItem("isLoggedIn", "true");
       Toast.show({
         type: "success",
         text1: `Welcome ${values.email}`,
