@@ -15,6 +15,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import Toast from "react-native-toast-message";
 import { auth } from "../../firebase";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const SignIn = () => {
   const navigation = useNavigation();
@@ -61,13 +62,14 @@ const SignIn = () => {
         values.password
       );
       console.log("Successfully logged in as:" + values.email);
+      AsyncStorage.setItem("isLoggedIn", "true");
       Toast.show({
         type: "success",
         text1: `Welcome ${values.email}`,
         text1Style: { textAlign: "left" },
       });
       // Navigate to the "Home" screen within the AuthRouter after successful login
-      navigation.navigate("AuthRouter", { screen: "Home" });
+      navigation.navigate("Home");
     } catch (error) {
       console.log(error + "ddsffd");
     }

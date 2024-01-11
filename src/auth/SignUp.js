@@ -96,7 +96,7 @@ const SignUp = () => {
       });
 
       // Navigate to "Somewhere" or any other screen on success
-      navigation.navigate("Somewhere");
+      navigation.navigate("SignIn");
     } catch (error) {
       // Display error toast on sign-up failure
       Toast.show({
