@@ -56,85 +56,82 @@ export default function AppRouter() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {isFirstLaunch && !isLoggedIn ? (
+        <Stack.Screen
+          name="Onboarding"
+          component={OnboardingScreen}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Group>
           <Stack.Screen
-            name="Onboarding"
-            component={OnboardingScreen}
-            options={{ headerShown: false }}
+            name="TabRouter"
+            component={TabRouter}
+            options={{ headerShown: true }}
           />
-        ) : null}
-        {isLoggedIn ? (
-          <Stack.Group>
-            <Stack.Screen
-              name="TabRouter"
-              component={TabRouter}
-              options={{ headerShown: true }}
-            />
-          </Stack.Group>
-        ) : (
-          <Stack.Group>
-            <Stack.Screen
-              name="SignIn"
-              component={SignIn}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="SignUp"
-              component={SignUp}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="ForgotPassword"
-              component={ForgotPassword}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="VerifyEmail"
-              component={VerifyEmail}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="VerifyPhone"
-              component={VerifyPhone}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="SuccesVerification"
-              component={SuccesVerification}
-              options={{ headerShown: false, gestureEnabled: false }}
-            />
-            <Stack.Screen
-              name="VerifyPhoneVerification"
-              component={VerifyPhoneVerification}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="SuccesSuccessForgotPage"
-              component={SuccesSuccessForgotPage}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="ForgotPasswordPhoneVerify"
-              component={ForgotPasswordPhoneVerify}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="ForgotPasswordPhone"
-              component={ForgotPasswordPhone}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="ForgotPasswordEmail"
-              component={ForgotPasswordEmail}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-            <Stack.Screen
-              name="ForgotPasswordEmailVerify"
-              component={ForgotPasswordEmailVerify}
-              options={{ headerShown: false, gestureEnabled: true }}
-            />
-          </Stack.Group>
-        )}
+        </Stack.Group>
+
+        <Stack.Group>
+          <Stack.Screen
+            name="SignIn"
+            component={SignIn}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUp}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="ForgotPassword"
+            component={ForgotPassword}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="VerifyEmail"
+            component={VerifyEmail}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="VerifyPhone"
+            component={VerifyPhone}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="SuccesVerification"
+            component={SuccesVerification}
+            options={{ headerShown: false, gestureEnabled: false }}
+          />
+          <Stack.Screen
+            name="VerifyPhoneVerification"
+            component={VerifyPhoneVerification}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="SuccesSuccessForgotPage"
+            component={SuccesSuccessForgotPage}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="ForgotPasswordPhoneVerify"
+            component={ForgotPasswordPhoneVerify}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="ForgotPasswordPhone"
+            component={ForgotPasswordPhone}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="ForgotPasswordEmail"
+            component={ForgotPasswordEmail}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+          <Stack.Screen
+            name="ForgotPasswordEmailVerify"
+            component={ForgotPasswordEmailVerify}
+            options={{ headerShown: false, gestureEnabled: true }}
+          />
+        </Stack.Group>
       </Stack.Navigator>
       <Toast />
     </NavigationContainer>

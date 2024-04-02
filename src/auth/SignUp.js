@@ -81,7 +81,7 @@ const SignUp = () => {
 
       // Create the user with email and password
       const userCredential = await auth.createUserWithEmailAndPassword(
-        values.email,
+        values.email || email,
         values.password
       );
 
@@ -94,9 +94,8 @@ const SignUp = () => {
         text1: "Signed up successfully",
         text2: `Welcome here, ${values.name}!`,
       });
-
-      // Navigate to "Somewhere" or any other screen on success
-      navigation.navigate("SignIn");
+      // Navigate to "VerifyEmail" and pass the email as a parameter
+      navigation.navigate("VerifyEmail", { email: values.email || email });
     } catch (error) {
       // Display error toast on sign-up failure
       Toast.show({
