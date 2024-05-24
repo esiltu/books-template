@@ -1,5 +1,3 @@
-![Screenshot](/assets/github-logo-banner.png)
-
 # Books Bazar Template - React Native Expo
 
 Welcome to the Books Bazar template, now freely available for everyone! 📚✨ This template serves as a ready-to-go front-end solution, giving you a solid foundation for your app ideas. Whether you're a beginner or an experienced developer, this kit includes essential elements to kickstart your project.
